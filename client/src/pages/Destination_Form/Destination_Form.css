@@ -1,0 +1,28 @@
+.navigationBar {
+  height: 50px;
+  width: 100%;
+  background: lightcoral;
+}
+
+.map {
+  height: 50vh;
+  width: 100%;
+  background: lightgreen;
+}
+
+.formSection{
+  width: 100%;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  padding: 50px;
+  align-items: top;
+  background-color: blanchedalmond;
+}
+
+.formFrame {
+  height: 150px;
+  width: 350px;
+  background: lightblue;
+  
+}
