@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Destination_Form from "./pages/Destination_Form/Destination_Form";
-// import Options from "./pages/Options.js"
+import Options from "./pages/Options.js"
 import NoMatch from "./pages/NoMatch";
 // import "./components/style.css";
 

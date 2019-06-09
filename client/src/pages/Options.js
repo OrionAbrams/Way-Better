@@ -1,8 +1,8 @@
 import React, {Component} from "react";
 import axios from "axios"
-import { MDBContainer, MDBRow, MDBCol } from "mdbreact";
-import { Redirect, Link } from "react-router-dom";
-import './Options.css';
+//import { MDBContainer, MDBRow, MDBCol } from "mdbreact";
+//import { Redirect, Link } from "react-router-dom";
+//import './Options.css';
 
 class Options extends Component {
     state = {
@@ -32,7 +32,6 @@ class Options extends Component {
             console.log(res)
           })
       };
-    
 
     render() {
         return (
@@ -49,28 +48,32 @@ class Options extends Component {
                             <div>Destination</div>
                             <input size="30" name="destination" className="form-control" placeholder="Where to?" value={this.state.destination} onChange={this.handleInputChange} />
                         </div>
+
                     </form>
                  </div>
             </div>
-                <p>**destination points here from home page**</p>
-                <h1>
-                    Your options today are:
-                </h1>
-                <ul type="none">
-                    <li>
-                        Bus option
-                    </li>
-                    <li>
-                        Train option
-                    </li>
-                    <li>
-                        walk/ bike option
-                    </li>
-                    <li>
-                        uber option
-                    </li>
-                </ul>
+                <div class="formOptions">
+                    <h1>
+                        Your options today are:
+                    </h1>
+                        <div class="formFrame">
+                            <form>  
+                                <div className="form-group">
+                                    <div>Train</div>
+                                    <input size="30" name="train" className="form-control" placeholder="Current Location" value={this.state.location} onChange={this.handleInputChange} />
+                                </div>
+                                <div className="form-group">
+                                    <div>Walk/Bike</div>
+                                    <input size="30" name="walk-bike" className="form-control" placeholder="Where to?" value={this.state.destination} onChange={this.handleInputChange} />
+                                </div>
+                                <div className="form-group">
+                                    <div>Uber</div>
+                                    <input size="30" name="uber" className="form-control" placeholder="Where to?" value={this.state.destination} onChange={this.handleInputChange} />
+                                </div>
+                            </form>
+                        </div>
            
+            </div>
             </div>
     );
     }
