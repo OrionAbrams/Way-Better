@@ -30,6 +30,21 @@ var data = {
   'timezone': ''
 };
 
+ // hardcoded here, but need front end input, then need to change spaces to +'s
+let origin = '30 alvarado pl berkeley ca'
+let destination = "150 golden gate ave san francisco ca"
+origin = origin.trim()
+origin = origin.replace(/\s+/g,'+')
+destination = destination.trim()
+destination = destination.replace(/\s+/g,'+')
+console.log(origin)
+axios.get('https://maps.googleapis.com/maps/api/directions/json?origin=' + origin + '&destination=' + destination + '&mode=transit&key=' + apiKey).then(function (res) {
+  // console.log(res.data.routes[0].legs[0].distance.text)
+  // put this through function to calc uber fare
+  // subtract transit fare (avg $4) from uber fare
+  // add this current fare to database's total fare
+  // check totalSavings and if over 100, they go up one level
+})
 router.post("/astrology", (req, res) => {
   city = req.body.city
   state = req.body.state
@@ -40,10 +55,10 @@ router.post("/astrology", (req, res) => {
   data.hour = req.body.hour
   data.minute = req.body.minute
   console.log(data)
-  axios.get('https://maps.googleapis.com/maps/api/geocode/json?address=' + city + '+' + state + '&key=' + apiKey).then(function (res) {
-    //get lat and lng based on city entered
-    data.latitude = res.data.results[0].geometry.location.lat
-    data.longitude = res.data.results[0].geometry.location.lng
+  axios.get('https://maps.googleapis.com/maps/api/directions/json?origin=30+Alvarado+pl+berkeley+CA&destination=san+francisco&key=' + apiKey).then(function (res) {
+    console.log(res)
+    // data.latitude = res.data.results[0].geometry.location.lat
+    // data.longitude = res.data.results[0].geometry.location.lng
   })
     .then(() => {
       // get the timezone for lat and lng

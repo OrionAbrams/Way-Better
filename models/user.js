@@ -3,39 +3,28 @@ const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
   username: String,
-  day: {
+  totalSavings: {
+    type: Number,
+    default: 0
+  },
+  totalPoints: {
+    type: Number,
+    default: 0
+  },
+  level: {
     type: Number,
     default: 1
   },
-  month: {
+  currentEnvFootprint: {
     type: Number,
-    default: 1
+    default: 0
   },
-  year: {
+  envFootprintTotal: {
     type: Number,
-    default: 1983
+    default: 0
   },
-  hour: {
-    type: Number,
-    default: 1
-  },
-  minute: {
-    type: Number,
-    default: 10
-  },
-  latitude: {
-    type: Number,
-    default: 41
-  },
-  longitude: {
-    type: Number,
-    default: 92
-  },
-  timezone: {
-    type: Number,
-    default: 6
-  },
-  date: { type: Date, default: Date.now }
+  date: { type: Date, 
+    default: Date.now }
 });
 
 const User = mongoose.model("User", userSchema);
