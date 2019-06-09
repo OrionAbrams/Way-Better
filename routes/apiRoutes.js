@@ -19,46 +19,42 @@ var resource = "planets/tropical";
 
 // make some dummy data in order to call vedic rishi api
 var data = {
-  'username': 'joe',
-  'day': 1,
-  'month': 2,
-  'year': 1983,
-  'hour': 3,
-  'minute': 20,
-  'latitude': 41.0076113999999911,
-  'longitude': 91.9637691411111,
-  'timezone': ''
+  'location': '',
+  'destination': ''
 };
 
- // hardcoded here, but need front end input, then need to change spaces to +'s
-let origin = '30 alvarado pl berkeley ca'
-let destination = "150 golden gate ave san francisco ca"
-origin = origin.trim()
-origin = origin.replace(/\s+/g,'+')
-destination = destination.trim()
-destination = destination.replace(/\s+/g,'+')
-console.log(origin)
-axios.get('https://maps.googleapis.com/maps/api/directions/json?origin=' + origin + '&destination=' + destination + '&mode=transit&key=' + apiKey).then(function (res) {
-  // console.log(res.data.routes[0].legs[0].distance.text)
-  // put this through function to calc uber fare
-  // subtract transit fare (avg $4) from uber fare
-  // add this current fare to database's total fare
-  // check totalSavings and if over 100, they go up one level
-})
+// hardcoded here, but need front end input, then need to change spaces to +'s
+// let origin = '30 alvarado pl berkeley ca'
+// let destination = "150 golden gate ave san francisco ca"
+// origin = origin.trim()
+// origin = origin.replace(/\s+/g,'+')
+// destination = destination.trim()
+// destination = destination.replace(/\s+/g,'+')
+// console.log(origin)
+// axios.get('https://maps.googleapis.com/maps/api/directions/json?origin=' + origin + '&destination=' + destination + '&mode=transit&key=' + apiKey).then(function (res) {
+//   // console.log(res.data.routes[0].legs[0].distance.text)
+//   // put this through function to calc uber fare
+//   // subtract transit fare (avg $4) from uber fare
+//   // add this current fare to database's total fare
+//   // check totalSavings and if over 100, they go up one level
+// })
 router.post("/astrology", (req, res) => {
-  city = req.body.city
-  state = req.body.state
-  data.username = req.body.username
-  data.day = req.body.day
-  data.month = req.body.month
-  data.year = req.body.year
-  data.hour = req.body.hour
-  data.minute = req.body.minute
+  data.location = req.body.location
+  data.destination = req.body.destination
   console.log(data)
-  axios.get('https://maps.googleapis.com/maps/api/directions/json?origin=30+Alvarado+pl+berkeley+CA&destination=san+francisco&key=' + apiKey).then(function (res) {
-    console.log(res)
-    // data.latitude = res.data.results[0].geometry.location.lat
-    // data.longitude = res.data.results[0].geometry.location.lng
+  let origin = data.location
+  let destination = data.destination
+  origin = origin.trim()
+  origin = origin.replace(/\s+/g, '+')
+  destination = destination.trim()
+  destination = destination.replace(/\s+/g, '+')
+  console.log(origin)
+  axios.get('https://maps.googleapis.com/maps/api/directions/json?origin=' + origin + '&destination=' + destination + '&mode=transit&key=' + apiKey).then(function (res) {
+    console.log(res.data.routes[0].legs[0].distance.text)
+    // put this through function to calc uber fare
+    // subtract transit fare (avg $4) from uber fare
+    // add this current fare to database's total fare
+    // check totalSavings and if over 100, they go up one level
   })
     .then(() => {
       // get the timezone for lat and lng
