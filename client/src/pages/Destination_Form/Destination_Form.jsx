@@ -5,7 +5,6 @@ import "./Destination_Form.css";
 
 import { Redirect, Link } from "react-router-dom";
 
-
 class Destination_Form extends React.Component {
   state = {
     location: "",
@@ -23,63 +22,17 @@ class Destination_Form extends React.Component {
   };
 
   handleFormSubmit = event => {
-    // event.preventDefault();
-    // if (!this.state.username) {
-    //   alert("You cannot leave the username field blank!")
-    //   return
-    // }
-    // if (!this.state.day) {
-    //   alert("You cannot leave the day field blank!")
-    //   return
-    // }
-    // if (!this.state.month) {
-    //   alert("You cannot leave the month field blank!")
-    //   return
-    // }
-    // if (!this.state.year) {
-    //   alert("You cannot leave the year field blank!")
-    //   return
-    // }
-    // if (!this.state.city) {
-    //   alert("You cannot leave the city field blank!")
-    //   return
-    // }
+    event.preventDefault();
     var userData = {
-      username: this.state.username.trim(),
-      day: parseInt(this.state.day),
-      month: parseInt(this.state.month),
-      year: parseInt(this.state.year),
-      hour: parseInt(this.state.hour),
-      minute: parseInt(this.state.minute),
-      city: this.state.city.trim(),
-      state: this.state.state.trim()
+      location: this.state.location.trim(),
+      destination: this.state.destination.trim()
     }
     console.log(userData)
     axios.post("/api/astrology", userData)
       .then((res) => {
         console.log(res)
-        // sunResponse = res.data[0].sign
-        // moonResponse = res.data[1].sign
-        // ascendantResponse = res.data[10].sign
-        // this.setState({ sun: astrology[sunResponse].Sun, moon: astrology[moonResponse].Moon, ascendant: astrology[ascendantResponse].Ascendant, allSun: astrology[sunResponse].All, allMoon: astrology[moonResponse].All, allAscendant: astrology[ascendantResponse].All })
-        // console.log(res.data)
-        // this.setState({
-        //   submitted: true
-        // });
       })
   };
-
-  // setRedirect = () => {
-  //   this.setState({
-  //     redirect: true
-  //   })
-  // }
-
-  // renderRedirect = () => {
-  //   if (this.state.redirect) {
-  //     return <Redirect to="/api/astrology" />
-  //   }
-  // }
 
   render() {
     return (
