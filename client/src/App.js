@@ -12,6 +12,7 @@ function App() {
         <Switch>
         <Route exact path="/" component={Destination_Form} />
         {/* <Route exact path="/Options" component={Options} /> */}
+        <Route exact path="/options" component={Options} />
         <Route component={NoMatch} />
         </Switch>
       </div>
