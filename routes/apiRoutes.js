@@ -7,6 +7,7 @@ var keys = require("../keys")
 var apiKey = keys.geolocation.key
 var city = 'fairfield'
 var state = 'ia'
+let currFare = 0
 
 function getTime() {
   var rightNow = Date.now()
@@ -58,17 +59,21 @@ router.post("/astrology", (req, res) => {
   console.log(origin)
   axios.get('https://maps.googleapis.com/maps/api/directions/json?origin=' + origin + '&destination=' + destination + '&mode=transit&key=' + apiKey).then(function (res) {
     console.log(res.data.routes[0].legs[0].distance.text)
+    let dist = res.data.routes[0].legs[0].distance.text
     // put this through function to calc uber fare
+    let uberFare = ubercalc(dist)
     // subtract transit fare (avg $4) from uber fare
+    currFare = uberFare - 4
     // add this current fare to database's total fare
+    
     // check totalSavings and if over 100, they go up one level
   })
     .then(() => {
       // we want to update the database with money saved and points earned
       console.log(data)
-      db.users.update(
+      db.User.update(
         { username: 'Jesse' },
-        { $inc: { totalSavings: 1, totalPoints: 2 } }
+        { $inc: { totalSavings: currFare, totalPoints: 2 } }
       ).then((res) => {
         console.log(res)
       })
