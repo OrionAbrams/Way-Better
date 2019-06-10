@@ -4,6 +4,11 @@
   background: lightgrey;
 }
 
+.userImage {
+  background-image: url('../../assets/images/JesseWayBetter.png');
+  background-size: 50px 50px; 
+}
+
 .map {
   height: 50vh;
   width: 100%;

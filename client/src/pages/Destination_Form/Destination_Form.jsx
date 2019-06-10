@@ -36,12 +36,13 @@ class Destination_Form extends React.Component {
 
   render() {
     return (
-      <div >
+      <div>
         <div class="navigationBar">
-          Navigation Bar
+          <div class="userImage">
+
+          </div>
         </div>
         <div class="map">
-          Navigation Map
         </div>
         <div class="formSection aqua-gradient">
           <div class="formFrame">
@@ -55,7 +56,7 @@ class Destination_Form extends React.Component {
                 <input size="30" name="destination" className="form-control" placeholder="Where to?" value={this.state.destination} onChange={this.handleInputChange} />
               </div>
               <Link to="/Options" >
-              <button class="btn btn-success" onClick={this.handleFormSubmit} type="submit" className="btn btn-lg btn-danger float-right">
+              <button onClick={this.handleFormSubmit} type="submit" className="btn btn-lg btn-light float-right">
                 Let's go!
               </button> 
               </Link>
