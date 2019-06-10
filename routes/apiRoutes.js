@@ -7,6 +7,7 @@ var keys = require("../keys")
 var apiKey = keys.geolocation.key
 var city = 'fairfield'
 var state = 'ia'
+
 function getTime() {
   var rightNow = Date.now()
   rightNow = rightNow.toString()
@@ -16,6 +17,12 @@ function getTime() {
 db.User.create({'username' : 'Jesse'})
 // api name which is to be called
 var resource = "planets/tropical";
+
+function ubercalc(distance) {
+  let dist = parseFloat(distance)
+  let base = 2.20
+  return base * 2 + (dist * 0.91) + (dist * 2 * 0.39)
+}
 
 // make some dummy data in order to call vedic rishi api
 var data = {
@@ -59,7 +66,12 @@ router.post("/astrology", (req, res) => {
     .then(() => {
       // we want to update the database with money saved and points earned
       console.log(data)
-      db.User.create(data)
+      db.users.update(
+        { username: 'Jesse' },
+        { $inc: { totalSavings: 1, totalPoints: 2 } }
+      ).then((res) => {
+        console.log(res)
+      })
     })
 })
 
