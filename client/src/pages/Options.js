@@ -37,6 +37,9 @@ class Options extends Component {
         return (
             
             <div>
+                {this.props.fictionalLocation}
+                {this.props.fictionalDestination}
+                
                 <div class="formSection">
                     <div class="formFrame">
                         <form>  
@@ -56,23 +59,27 @@ class Options extends Component {
                     <h1>
                         Your options today are:
                     </h1>
-                        <div class="formFrame">
-                            <form>  
-                                <div className="form-group">
-                                    <div>Train</div>
-                                    <input size="30" name="train" className="form-control" placeholder="Current Location" value={this.state.location} onChange={this.handleInputChange} />
-                                </div>
-                                <div className="form-group">
-                                    <div>Walk/Bike</div>
-                                    <input size="30" name="walk-bike" className="form-control" placeholder="Where to?" value={this.state.destination} onChange={this.handleInputChange} />
-                                </div>
-                                <div className="form-group">
-                                    <div>Uber</div>
-                                    <input size="30" name="uber" className="form-control" placeholder="Where to?" value={this.state.destination} onChange={this.handleInputChange} />
-                                </div>
-                            </form>
-                        </div>
-           
+
+                    <div className="train">
+                        <button className="option-button">
+                            train!
+                        </button>
+                    </div>
+                    <div className="bus">
+                        <button className="option-button">
+                            bus!
+                        </button>
+                    </div>
+                    <div className="walk">
+                        <button className="option-button">
+                            walk!
+                        </button>
+                    </div>
+                    <div className="bike">
+                        <button className="option-button">
+                            bike!
+                        </button>
+                    </div>
             </div>
             </div>
     );
