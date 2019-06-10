@@ -55,11 +55,14 @@ class Destination_Form extends React.Component {
                 <div>Destination</div>
                 <input size="30" name="destination" className="form-control" placeholder="Where to?" value={this.state.destination} onChange={this.handleInputChange} />
               </div>
-              <Link to="/Options" >
-              <button onClick={this.handleFormSubmit} type="submit" className="btn btn-lg btn-light float-right">
-                Let's go!
-              </button> 
-              </Link>
+          
+              
+                <button onClick={this.handleFormSubmit} type="submit" className="btn btn-lg btn-light float-right">
+                    Let's go!
+                </button> 
+                <Link to="/Options">
+                  ->
+                </Link>
           </form>
           </div>
         </div>

@@ -10,7 +10,6 @@ function App() {
       <div className="wrapping">
         <Switch>
         <Route exact path="/" component={Destination_Form} />
-        {/* <Route exact path="/Options" component={Options} /> */}
         <Route exact path="/Options" component={Options} />
         </Switch>
       </div>
