@@ -1,13 +1,16 @@
 .navigationBar {
   height: 50px;
   width: 100%;
-  background: lightcoral;
+  background: lightgrey;
 }
 
 .map {
   height: 50vh;
   width: 100%;
-  background: lightgreen;
+  /* background: transparent; */
+  background-image: url('../../assets/images/map.png');
+  background-size: auto;
+  background-repeat: no-repeat;
 }
 
 .formSection{
@@ -23,6 +26,6 @@
 .formFrame {
   height: 150px;
   width: 350px;
-  background: lightblue;
+  background: transparent;
   
 }

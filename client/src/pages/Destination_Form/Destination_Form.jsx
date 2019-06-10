@@ -43,14 +43,14 @@ class Destination_Form extends React.Component {
         <div class="map">
           Navigation Map
         </div>
-        <div class="formSection">
+        <div class="formSection aqua-gradient">
           <div class="formFrame">
             <form>  
-              <div className="form-group">
+              <div className="form-group flex-row">
                 <div>Location</div>
                 <input size="30" name="location" className="form-control" placeholder="Current Location" value={this.state.location} onChange={this.handleInputChange} />
               </div>
-              <div className="form-group">
+              <div className="form-group flex-row">
                 <div>Destination</div>
                 <input size="30" name="destination" className="form-control" placeholder="Where to?" value={this.state.destination} onChange={this.handleInputChange} />
               </div>
