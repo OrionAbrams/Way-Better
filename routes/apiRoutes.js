@@ -7,6 +7,8 @@ var keys = require("../keys")
 var apiKey = keys.geolocation.key
 var city = 'fairfield'
 var state = 'ia'
+let currFare = 0
+
 function getTime() {
   var rightNow = Date.now()
   rightNow = rightNow.toString()
@@ -16,6 +18,12 @@ function getTime() {
 db.User.create({'username' : 'Jesse'})
 // api name which is to be called
 var resource = "planets/tropical";
+
+function ubercalc(distance) {
+  let dist = parseFloat(distance)
+  let base = 2.20
+  return base * 2 + (dist * 0.91) + (dist * 2 * 0.39)
+}
 
 // make some dummy data in order to call vedic rishi api
 var data = {
@@ -51,15 +59,27 @@ router.post("/astrology", (req, res) => {
   console.log(origin)
   axios.get('https://maps.googleapis.com/maps/api/directions/json?origin=' + origin + '&destination=' + destination + '&mode=transit&key=' + apiKey).then(function (res) {
     console.log(res.data.routes[0].legs[0].distance.text)
+    let dist = res.data.routes[0].legs[0].distance.text
     // put this through function to calc uber fare
+    let uberFare = ubercalc(dist).toFixed(2)
     // subtract transit fare (avg $4) from uber fare
+    currFare = uberFare - 4
     // add this current fare to database's total fare
+    
     // check totalSavings and if over 100, they go up one level
   })
     .then(() => {
+      res.json(currFare)
+    })
+      .then(() => {
       // we want to update the database with money saved and points earned
       console.log(data)
-      db.User.create(data)
+      db.User.update(
+        { username: 'Jesse' },
+        { $inc: { totalSavings: currFare, totalPoints: 2 } }
+      ).then((res) => {
+        console.log(res)
+      })
     })
 })
 

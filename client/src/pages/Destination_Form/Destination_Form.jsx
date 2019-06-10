@@ -30,7 +30,7 @@ class Destination_Form extends React.Component {
     console.log(userData)
     axios.post("/api/astrology", userData)
       .then((res) => {
-        console.log(res)
+        alert("You will save $" + res.data + " taking public transportation instead of Uber!")
       })
   };
 
@@ -43,14 +43,14 @@ class Destination_Form extends React.Component {
         <div class="map">
           Navigation Map
         </div>
-        <div class="formSection aqua-gradient">
+        <div class="formSection">
           <div class="formFrame">
             <form>  
-              <div className="form-group flex-row">
+              <div className="form-group">
                 <div>Location</div>
                 <input size="30" name="location" className="form-control" placeholder="Current Location" value={this.state.location} onChange={this.handleInputChange} />
               </div>
-              <div className="form-group flex-row">
+              <div className="form-group">
                 <div>Destination</div>
                 <input size="30" name="destination" className="form-control" placeholder="Where to?" value={this.state.destination} onChange={this.handleInputChange} />
               </div>
