@@ -1,8 +1,20 @@
-# Way-Better
-  This app was built with increasing interest in public transportation in mind. There has been a 62% increase in traffic congestion in the last 5 years in the Bay Area. This app helps people automatically record how much they are saving over time taking public transport or walking/biking vs. rideshare as an inspiration to keep doing so.
+# Way Better
+
+## Live Site: [Way Better](https://waybetter.herokuapp.com/) 
+  * Note: The current app was done with a team of 5 in the Hacking With Hearth Hackathon, and is very incomplete.
+
+## Design: To be uploaded
+
+### 1. Why / Background
+  *  Way Better was built with increasing interest in public transportation in mind. There has been a 62% increase in traffic congestion in the last 5 years in the Bay Area. This app helps people automatically record how much they are saving over time taking public transport or walking/biking vs. rideshare as an inspiration to keep doing so
+
+ ### 2. What / Objectives / User Stories
+  * **Technologies**, design through deployment of the application:
+    * Server-side: Node.js w/ Express web app framework; MongoDB for data persistence
+    * Client-side: React.js library for component based user interface; Material Bootstrap framework for HTML/CSS
+  * **User stories**:
+    * To be able to gain motivation to take more public transport and help the environment and traffic congestion in the process
+    * To gain points and possible rewards in taking public transport more, with game-like elements so it's fun.
   
-  The current app was done with a team of 5 in the Hacking With Hearth Hackathon, and is very incomplete.
-
-
-# Live app
-  [Way Better](https://waybetter.herokuapp.com/)
+## Authors
+  * Orion Abrams * Benicio Vargas * Tona Ramos * Leo Byeon * Katie Snider
