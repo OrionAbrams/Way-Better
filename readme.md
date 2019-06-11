@@ -1,7 +1,7 @@
 # Way Better
 
 ## Live Site: [Way Better](https://waybetter.herokuapp.com/) 
-  * Note: The current app was done with a team of 5 in the Hacking With Hearth Hackathon, and is very incomplete.
+  * Note: The current app was done with a team of 5 in the SF Hacking With Heart Hackathon, and is very incomplete.
 
 ## Design: To be uploaded
 
