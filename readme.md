@@ -18,4 +18,8 @@
     * To gain points and possible rewards in taking public transport more, with game-like elements so it's fun.
   
 ## Authors
-  * Orion Abrams * Benicio Vargas * Tona Ramos * Leo Byeon * Katie Snider
+  * Orion Abrams 
+  * Benicio Vargas 
+  * Tona Ramos 
+  * Leo Byeon 
+  * Katie Snider
