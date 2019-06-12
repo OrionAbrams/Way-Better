@@ -7,6 +7,7 @@
 
 ### 1. Why / Background
   *  Way Better was built with increasing interest in public transportation in mind. There has been a 62% increase in traffic congestion in the last 5 years in the Bay Area. This app helps people automatically record how much they are saving over time taking public transport or walking/biking vs. rideshare as an inspiration to keep doing so
+  * Slideshow presentation of reason behind app: [Presentation] (https://drive.google.com/file/d/1otQEZUm_WWsP088FZ9e75dkmmr4q6uoi/view?usp=sharing)
 
  ### 2. What / Objectives / User Stories
   * **Technologies**, design through deployment of the application:
