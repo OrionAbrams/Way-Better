@@ -3,7 +3,7 @@
 ## Live Site: [Way Better](https://waybetter.herokuapp.com/) 
   * Note: The current app was done with a team of 5 in the SF Hacking With Heart Hackathon, and is very incomplete, as we had less than 5 hours to think of an idea, design, and code it.
 
-## Design: To be uploaded
+## Design: [mock phone app](https://projects.invisionapp.com/share/B4SF63BDPVU)
 
 ### 1. Why / Background
   *  Way Better was built with increasing interest in public transportation in mind. There has been a 62% increase in traffic congestion in the last 5 years in the Bay Area. This app helps people automatically record how much they are saving over time taking public transport or walking/biking vs. rideshare as an inspiration to keep doing so
